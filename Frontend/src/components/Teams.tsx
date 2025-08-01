@@ -8,6 +8,7 @@ import PrasadRao from "../assets/Parsadrao.jpg"
 import Asutosh from "../assets/Asutosh.jpg"
 import Sanjay from "../assets/Sanjay.jpg"
 import Anuradha from "../assets/Anuradha.jpg";
+import msreeddy from "../assets/msreeddy.jpg"
 
 const teamMembers = [
   {
@@ -19,10 +20,18 @@ const teamMembers = [
     categories: ["Leadership", "Strategy"],
   },
   {
+    name: "Dr. M.S Reddy",
+    role: "National Academic Director",
+    avatar: msreeddy,
+    initials: "NAD",
+    bio: "Professor Dr. M.S. Reddy is a distinguished academic leader, researcher, and international expert in zoology and apiculture, serving as the National Academic Director at Vidhyasri.",
+    categories: ["Leadership", "Strategy"],
+  },
+  {
     name: "Prasad Rao Kotnani",
     role: "National Director Admin",
     avatar: PrasadRao,
-    initials: "MD",
+    initials: "NDA",
     bio: "With vision to see it, resilience to endure it, and execution to achieve it — extraordinary success becomes possible",
     categories: ["Leadership", "Strategy"],
   },
@@ -30,7 +39,7 @@ const teamMembers = [
     name: "Sanjay Shukla",
     role: "National Director Operation",
     avatar: Sanjay,
-    initials: "SS",
+    initials: "NDO",
     bio: "Sanjay is a dedicated educator with a wealth of experience in academic leadership and a commitment to student success.",
     categories: ["Leadership", "Academics"],
   },

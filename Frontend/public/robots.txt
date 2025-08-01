@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edutechinnovate.com/sitemap.xml
+Sitemap: http://vidhyasri-academy.com/sitemap.xml
