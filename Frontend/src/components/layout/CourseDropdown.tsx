@@ -150,7 +150,7 @@ export default function CourseDropdown() {
       <NavigationMenuList>
         <NavigationMenuItem>
 
-          <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 font-medium text-transform: capitalize transition-colors">
+          <NavigationMenuTrigger className=" hover:text-blue-600 font-medium text-transform: capitalize transition-colors">
             Courses
           </NavigationMenuTrigger>
 
