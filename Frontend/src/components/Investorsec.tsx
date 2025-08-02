@@ -153,7 +153,7 @@ export default function InvestorSection() {
               <div>
                 <h4 className="text-lg font-medium mb-2">Series B Round</h4>
                 <p className="text-blue-100 mb-4">
-                  We're raising ₹ 15L+ to accelerate our growth, expand into new markets, 
+                  We're raising ₹15L+ to accelerate our growth, expand into new markets, 
                   and enhance our research capabilities to further personalize the learning experience.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
