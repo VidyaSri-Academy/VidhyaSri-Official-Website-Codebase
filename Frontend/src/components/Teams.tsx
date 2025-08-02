@@ -19,14 +19,7 @@ const teamMembers = [
     categories: ["Leadership", "Strategy"],
   },
 
-  {
-    name: "Dr. M.S Reddy",
-    role: "National Academic Director",
-    avatar: msreeddy,
-    initials: "NAD",
-    bio: "Professor Dr. M.S. Reddy is a distinguished academic leader, researcher, and international expert in zoology and apiculture, serving as the National Academic Director at Vidhyasri.",
-    categories: ["Leadership", "Strategy"],
-  },
+
 
   {
     name: "Prasad Rao Kotnani",
@@ -46,6 +39,15 @@ const teamMembers = [
     categories: ["Leadership", "Academics"],
   },
   
+  {
+    name: "Dr. M.S Reddy",
+    role: "National Academic Director",
+    avatar: msreeddy,
+    initials: "NAD",
+    bio: "Professor Dr. M.S. Reddy is a distinguished academic leader, researcher, and international expert in zoology and apiculture, serving as the National Academic Director at Vidhyasri.",
+    categories: ["Leadership", "Strategy"],
+  },
+
   {
     name: "Ashutosh Kumar",
     role: "Academic Business Development",
