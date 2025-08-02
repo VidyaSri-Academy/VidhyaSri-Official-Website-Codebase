@@ -1,4 +1,4 @@
-import React from "react";
+
 import Rangappa from "../../assets/Rangappa.jpg";
 
 const profileImage = Rangappa;

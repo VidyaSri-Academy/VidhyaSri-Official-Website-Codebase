@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BrainCircuit, ChartBar, Cog, FileText, Lightbulb, Target, Users } from "lucide-react";
+import { BrainCircuit, ChartBar, FileText, Lightbulb, Target, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [

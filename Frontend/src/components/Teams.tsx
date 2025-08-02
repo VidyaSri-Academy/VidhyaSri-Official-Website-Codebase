@@ -3,7 +3,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import Rangappa from "../assets/Rangappa.jpg";
-import { Link } from "react-router-dom";
 import PrasadRao from "../assets/Parsadrao.jpg"
 import Asutosh from "../assets/Asutosh.jpg"
 import Sanjay from "../assets/Sanjay.jpg"
@@ -68,17 +67,6 @@ const teamMembers = [
 ];
 
 export default function TeamSection() {
-  const categories = [
-    "All",
-    "Leadership",
-    "Tech",
-    "Product",
-    "Design",
-    "Sales",
-    "Data",
-    "Finance",
-  ];
-
   return (
     <section id="team" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">

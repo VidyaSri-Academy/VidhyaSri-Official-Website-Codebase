@@ -2,10 +2,6 @@ import { motion } from "framer-motion";
 import OurStory from "./Ourstory";
 import Values from "./Values";
 import TeamSection from "./Teams";
-import BiographyPage from "./Biography/Rangapa";
-import BiographyPage2 from "./Biography/PrasadRao";
-import BiographyPage3 from "./Biography/SanjayShukla";
-import { Outlet } from "react-router";
 import Mentors from "./Mentors";
 
 export default function About() {

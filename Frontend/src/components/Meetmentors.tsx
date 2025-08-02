@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Mentor1 from "./Biography/Rajesh";
 
 
-export default function meetmentors() {
+export default function Meetmentors() {
   return (
       <section id="team" className="py-20 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">

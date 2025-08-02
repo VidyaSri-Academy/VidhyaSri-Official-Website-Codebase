@@ -27,16 +27,6 @@ const teamMembers = [
 ];
 
 export default function Mentors() {
-  const categories = [
-    "All",
-    "Leadership",
-    "Tech",
-    "Product",
-    "Design",
-    "Sales",
-    "Data",
-    "Finance",
-  ];
 
   return (
     <>

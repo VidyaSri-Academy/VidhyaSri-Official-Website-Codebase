@@ -7,7 +7,7 @@ import {
   Calendar,
   Users,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { useEffect } from "react";
 

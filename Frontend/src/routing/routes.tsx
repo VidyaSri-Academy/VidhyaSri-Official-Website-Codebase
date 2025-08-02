@@ -5,7 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import About from "@/components/Aboutus";
 import HomeLayout from "@/components/HomeLayout";
 import Directors from "@/components/Directors";
-import Meetmentors from "../components/meetmentors"
+import Meetmentors from "@/components/Meetmentors";
 
 const router = createBrowserRouter([
   {

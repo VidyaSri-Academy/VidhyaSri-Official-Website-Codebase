@@ -10,7 +10,7 @@ import {
 
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge"
-import { Book, BrainCircuit, GraduationCap, ScrollText, Target, UsersRound, Video } from "lucide-react";
+import { Book, BrainCircuit, Target, UsersRound } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 
@@ -50,61 +50,61 @@ const k12Courses: CourseItem[] = [
   }
 ];
 
-const higherEdCourses: CourseItem[] = [
-  {
-    title: "Computer Science",
-    description: "Programming, algorithms, and software engineering fundamentals",
-    icon: BrainCircuit,
-    href: "#",
-    badge: "Trending"
-  },
-  {
-    title: "Business Administration",
-    description: "Management, marketing, finance, and entrepreneurship",
-    icon: Target,
-    href: "#"
-  },
-  {
-    title: "Health Sciences",
-    description: "Anatomy, physiology, and healthcare management",
-    icon: ScrollText,
-    href: "#"
-  },
-  {
-    title: "Data Science & Analytics",
-    description: "Statistical analysis, machine learning, and data visualization",
-    icon: GraduationCap,
-    href: "#"
-  }
-];
+// const higherEdCourses: CourseItem[] = [
+//   {
+//     title: "Computer Science",
+//     description: "Programming, algorithms, and software engineering fundamentals",
+//     icon: BrainCircuit,
+//     href: "#",
+//     badge: "Trending"
+//   },
+//   {
+//     title: "Business Administration",
+//     description: "Management, marketing, finance, and entrepreneurship",
+//     icon: Target,
+//     href: "#"
+//   },
+//   {
+//     title: "Health Sciences",
+//     description: "Anatomy, physiology, and healthcare management",
+//     icon: ScrollText,
+//     href: "#"
+//   },
+//   {
+//     title: "Data Science & Analytics",
+//     description: "Statistical analysis, machine learning, and data visualization",
+//     icon: GraduationCap,
+//     href: "#"
+//   }
+// ];
 
-const professionalCourses: CourseItem[] = [
-  {
-    title: "Leadership Development",
-    description: "Strategic management and organizational leadership",
-    icon: UsersRound,
-    href: "#"
-  },
-  {
-    title: "Digital Marketing",
-    description: "Social media, SEO, content marketing, and analytics",
-    icon: Target,
-    href: "#"
-  },
-  {
-    title: "Software Engineering",
-    description: "Web development, mobile apps, and cloud computing",
-    icon: BrainCircuit,
-    href: "#",
-    badge: "New"
-  },
-  {
-    title: "Professional Certifications",
-    description: "Exam prep for industry-recognized credentials",
-    icon: GraduationCap,
-    href: "#"
-  }
-];
+// const professionalCourses: CourseItem[] = [
+//   {
+//     title: "Leadership Development",
+//     description: "Strategic management and organizational leadership",
+//     icon: UsersRound,
+//     href: "#"
+//   },
+//   {
+//     title: "Digital Marketing",
+//     description: "Social media, SEO, content marketing, and analytics",
+//     icon: Target,
+//     href: "#"
+//   },
+//   {
+//     title: "Software Engineering",
+//     description: "Web development, mobile apps, and cloud computing",
+//     icon: BrainCircuit,
+//     href: "#",
+//     badge: "New"
+//   },
+//   {
+//     title: "Professional Certifications",
+//     description: "Exam prep for industry-recognized credentials",
+//     icon: GraduationCap,
+//     href: "#"
+//   }
+// ];
 
 const ListItem = ({
   className,

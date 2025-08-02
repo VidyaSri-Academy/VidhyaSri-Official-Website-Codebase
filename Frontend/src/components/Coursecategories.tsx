@@ -1,4 +1,4 @@
-import React from "react";
+
 // Import motion from Framer Motion
 import { motion } from "framer-motion";
 // Import the icons we'll use from lucide-react

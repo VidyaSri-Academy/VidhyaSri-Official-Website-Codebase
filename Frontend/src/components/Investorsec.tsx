@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, BarChart, LineChart, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, BarChart, TrendingUp, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function InvestorSection() {

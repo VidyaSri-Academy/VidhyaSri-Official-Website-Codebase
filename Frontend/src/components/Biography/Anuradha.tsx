@@ -1,4 +1,4 @@
-import React from "react";
+
 import Anuradha from "../../assets/Anuradha.jpg";
 
 const profileImage = Anuradha;
