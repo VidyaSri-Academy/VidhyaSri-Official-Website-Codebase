@@ -19,30 +19,35 @@ const programs = [
     exams: ["Foundation Program", "NTSE", "KVPY", "Olympiads"],
     aop: "MapMyTutor",
     icon: <FlaskConical size={32} className="text-blue-500" />,
+    link: "https://mapmytutor.com/",
   },
   {
     eligibility: "11th PUI, 12th PUII (Science)",
     exams: ["IIT-JEE", "NEET", "CET"],
     aop: "MapMyTutor",
     icon: <FlaskConical size={32} className="text-blue-500" />,
+    link: "https://mapmytutor.com/",
   },
   {
     eligibility: "11th PUI, 12th PUII (Commerce)",
     exams: ["CA", "CS", "CMA", "ACCA"],
     aop: "SuccessEdge",
     icon: <Briefcase size={32} className="text-green-500" />,
+    link: "https://www.successedge.co/",
   },
   {
     eligibility: "11th PUI, 12th PUII (Science/Commerce/Arts)",
     exams: ["SSC", "Banking Services", "RRB"],
     aop: "National Excellencez Academy",
     icon: <Landmark size={32} className="text-purple-500" />,
+    link: "https://neza.in/",
   },
   {
     eligibility: "11th PUI, 12th PUII (Science/Commerce/Arts)",
     exams: ["UPSC/PCS Foundation Program"],
     aop: "IndiaA4IAS",
     icon: <ShieldCheck size={32} className="text-red-500" />,
+    link: "https://india4ias.com/",
   },
 ];
 
@@ -94,7 +99,7 @@ export default function IntegratedProgramCards() {
               {/* Updated Button Section */}
               <div className="inline-block text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 rounded-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <motion.a
-                  href="#"
+                  href={program.link}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}

@@ -12,13 +12,14 @@ import msreeddy from "../assets/msreeddy.jpg"
 
 const teamMembers = [
   {
-    name: "Prof.M.Rangappa",
+    name: "Prof. M. Rangappa",
     role: "Managing Director",
     avatar: Rangappa,
     initials: "MD",
     bio: "We don't just educate—we engineer potential, catalyze innovation, and nurture leadership for the 21st-century world.",
     categories: ["Leadership", "Strategy"],
   },
+
   {
     name: "Dr. M.S Reddy",
     role: "National Academic Director",
@@ -27,6 +28,7 @@ const teamMembers = [
     bio: "Professor Dr. M.S. Reddy is a distinguished academic leader, researcher, and international expert in zoology and apiculture, serving as the National Academic Director at Vidhyasri.",
     categories: ["Leadership", "Strategy"],
   },
+
   {
     name: "Prasad Rao Kotnani",
     role: "National Director Admin",
@@ -35,6 +37,7 @@ const teamMembers = [
     bio: "With vision to see it, resilience to endure it, and execution to achieve it — extraordinary success becomes possible",
     categories: ["Leadership", "Strategy"],
   },
+
   {
     name: "Sanjay Shukla",
     role: "National Director Operation",
@@ -43,13 +46,14 @@ const teamMembers = [
     bio: "Sanjay is a dedicated educator with a wealth of experience in academic leadership and a commitment to student success.",
     categories: ["Leadership", "Academics"],
   },
+  
   {
     name: "Ashutosh Kumar",
-    role: "Director Business Development",
+    role: "Academic Business Development",
     avatar: Asutosh,
     initials: "AK",
     bio: "Ashutosh is a passionate educator with over 10 years of experience, specializing in JEE Mains, NDA, Olympiads, and CBSE board preparation.",
-    categories: ["Leadership", "Academics"],
+    categories: ["Academics"],
   },
 
   {
@@ -58,7 +62,7 @@ const teamMembers = [
     avatar: Anuradha,
     initials: "NA",
     bio: "Anuradha is a visionary leader with a passion for transforming education through innovative approaches and technology.",
-    categories: ["Leadership", "Academics"],
+    categories: ["Leadership"],
   },
 
 ];

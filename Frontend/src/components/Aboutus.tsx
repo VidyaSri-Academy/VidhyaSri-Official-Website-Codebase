@@ -6,6 +6,7 @@ import BiographyPage from "./Biography/Rangapa";
 import BiographyPage2 from "./Biography/PrasadRao";
 import BiographyPage3 from "./Biography/SanjayShukla";
 import { Outlet } from "react-router";
+import Mentors from "./Mentors";
 
 export default function About() {
   return (
@@ -63,6 +64,10 @@ export default function About() {
 
       <section>
         <TeamSection />
+      </section>
+
+      <section>
+        <Mentors />
       </section>
 
     </>

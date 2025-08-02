@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import About from "@/components/Aboutus";
 import HomeLayout from "@/components/HomeLayout";
 import Directors from "@/components/Directors";
+import Meetmentors from "../components/meetmentors"
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path: "/learn-more",
         element: <Directors />,
       },
+      {
+        path: "/learn-more/:id",
+        element: <Meetmentors />,
+      }
     ],
   },
 ]);

@@ -2,50 +2,34 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
+import Aarav from "../assets/Aarav.jpg";
+import Diya from "../assets/Divya.jpg"; 
+import Rahul from "../assets/Rahul.jpg";
+
 const testimonials = [
   {
-    name: "Dr. Sarah Johnson",
-    role: "Director of Educational Technology, Stanford University",
-    avatar: "",
-    initials: "SJ",
-    content: "EduTech Innovate has revolutionized how we approach teaching and learning at our institution. The AI-driven insights have allowed us to identify learning gaps and address them proactively, resulting in a 32% improvement in student outcomes.",
+    name: "Aarav Mehta",
+    role: "Engineering Student, BGS",
+    avatar: Aarav,
+    initials: "AM",
+    content: "Using Vidhyasri Platform helped me personalize my study plan and stay ahead in competitive exams. Their recommendations and real-time feedback made my preparation smarter and more focused."
   },
   {
-    name: "James Rodriguez",
-    role: "High School Principal, Phillips Academy",
-    avatar: "",
-    initials: "JR",
-    content: "The platform's ability to personalize learning for each student while giving our teachers powerful tools to track progress has been game-changing. Our teachers spend less time on administrative tasks and more time doing what they love - teaching.",
+    name: "Diya Sharma",
+    role: "B.Com Student, The Oxford Educational Institute",
+    avatar: Diya,
+    initials: "DS",
+    content: "Balancing discipline was tough, but this platform simplified it all. The intuitive dashboard, skill-based learning modules, and expert mentorship gave me a clear edge in college selection."
   },
   {
-    name: "Prof. Michael Chen",
-    role: "Educational Research Lead, MIT",
-    avatar: "",
-    initials: "MC",
-    content: "We've been studying educational technology solutions for years, and EduTech Innovate stands out with its evidence-based approach and rigorous commitment to measurable outcomes. The data analytics capabilities are particularly impressive.",
-  },
-  {
-    name: "Lisa Thompson",
-    role: "Education Board Member, New York State",
-    avatar: "",
-    initials: "LT",
-    content: "Implementing EduTech Innovate across our district has led to more equitable learning outcomes for all students. The platform's ability to adapt to different learning needs has helped close achievement gaps we've struggled with for years.",
-  },
-  {
-    name: "David Oladele",
-    role: "Technology Director, International School of Lagos",
-    avatar: "",
-    initials: "DO",
-    content: "As an international institution, we needed a solution that could work across cultural and language barriers. This platform has exceeded our expectations, with strong multilingual support and culturally adaptive content.",
-  },
-  {
-    name: "Emma Watson",
-    role: "Head of E-Learning, University of Oxford",
-    avatar: "",
-    initials: "EW",
-    content: "The ROI on our EduTech Innovate implementation has been remarkable. Beyond the improvement in student performance, we've seen significant cost savings in administrative overhead and better resource allocation.",
-  },
+    name: "Rahul Iyer",
+    role: "Class 12 Student, Baldwin Methodist College",
+    avatar: Rahul,
+    initials: "RI",
+    content: "What I loved most was how engaging learning became! The platform turned boring topics into interactive sessions. It's like having a personal tutor 24/7—my board exam confidence has skyrocketed."
+  }
 ];
+
 
 export default function Testimonials() {
   return (
@@ -59,11 +43,10 @@ export default function Testimonials() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Trusted by <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Education Leaders</span> Worldwide
+              Trusted by <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Our Top</span> Students.
             </h2>
             <p className="text-lg text-gray-600">
-              Hear from administrators, teachers, and education experts who have transformed
-              their institutions with our innovative platform.
+              Discover how our students have transformed their institutions through our proven expertise!
             </p>
           </motion.div>
         </div>

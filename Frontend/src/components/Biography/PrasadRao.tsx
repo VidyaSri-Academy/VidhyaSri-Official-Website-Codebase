@@ -41,10 +41,10 @@ export default function BiographyPage2() {
                 transforming it into a 300+ member strong IT and EdTech company.
                 MAP Systems offers cutting-edge services in publishing, creative
                 design, and software development. Under his leadership, the
-                company expanded into education technology with AI-powered
-                platforms like MAP My Classes (ERP + LMS) and MAP My Tutor
-                (online exam prep), empowering institutions and learners through
-                innovative digital solutions.
+                company expanded into education technology with platforms like
+                MAP My Classes (ERP + LMS) and MAP My Tutor (online exam prep),
+                empowering institutions and learners through innovative digital
+                solutions.
               </p>
               <p>
                 In 2000, he founded Invensis Technologies, now a global BPO/KPO
