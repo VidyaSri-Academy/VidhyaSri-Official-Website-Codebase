@@ -50,7 +50,7 @@ const teamMembers = [
 
   {
     name: "Ashutosh Kumar",
-    role: "Academic Business Development",
+    role: "Director Business Development",
     avatar: Asutosh,
     initials: "AK",
     bio: "Ashutosh is a passionate educator with over 10 years of experience, specializing in JEE Mains, NDA, Olympiads, and CBSE board preparation.",
@@ -59,7 +59,7 @@ const teamMembers = [
 
   {
     name: "Anuradha",
-    role: "National Director Academics",
+    role: "Regional Director Business Development (MP / MH)",
     avatar: Anuradha,
     initials: "NA",
     bio: "Anuradha is a visionary leader with a passion for transforming education through innovative approaches and technology.",

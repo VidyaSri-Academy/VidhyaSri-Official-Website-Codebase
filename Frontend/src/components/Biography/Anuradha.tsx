@@ -24,7 +24,7 @@ export default function BiographyPage4() {
               Anuradha Mahendra Aher
             </h1>
             <p className="mb-4 text-xl md:text-2xl font-semibold text-blue-600">
-              Region Director Business Development
+              Regional Director Business Development (MP / MH)
             </p>
 
             <div className="mt-8 prose prose-lg text-gray-700 max-w-none leading-relaxed antialiased md:subpixel-antialiased text-justify py-8 gap-y-4 flex flex-col">

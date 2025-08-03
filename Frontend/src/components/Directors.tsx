@@ -32,9 +32,9 @@ export default function Directors() {
         </div>
 
         <BiographyPage />
-        <BiographyPage6 />
         <BiographyPage2 />
         <BiographyPage3 />
+        <BiographyPage6 />
         <BiographyPage4 />
         <BiographyPage5 />
       </section>
