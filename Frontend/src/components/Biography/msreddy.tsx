@@ -20,7 +20,7 @@ export default function BiographyPage6() {
           {/* Right Side: Biography */}
           <div className="w-full md:w-2/3 lg:w-3/4">
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-2">
-              Dr. Muniswamy Reddy Shankar Reddy
+              Dr. M.S Reddy
             </h1>
             <p className="mb-4 text-xl md:text-2xl font-semibold text-blue-600">
               National Academic Director
@@ -28,7 +28,7 @@ export default function BiographyPage6() {
 
             <div className="mt-8 prose prose-lg text-gray-700 max-w-none leading-relaxed antialiased md:subpixel-antialiased text-justify py-8 gap-y-4 flex flex-col">
               <p>
-                Professor Dr. Muniswamy Reddy Shankar Reddy (Prof. Dr. M.S.
+                Professor Dr. Reddy (Prof. Dr. M.S.
                 Reddy) serves as the National Academic Director at Vidyasri,
                 bringing over four decades of distinguished experience in
                 teaching, research, and academic administration. He has held

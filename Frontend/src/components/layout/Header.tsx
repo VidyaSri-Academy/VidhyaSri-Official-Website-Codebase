@@ -23,21 +23,21 @@ export default function Header() {
     <header
       className={`fixed mx-auto py-4 top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"}`}
     >
-      <div className="ml-9">
-        <Link to="/" className="flex items-center mr-20 -my-20">
+      <div className="ml-20">
+        <a href="/" className="flex items-center mr-20 -my-20">
           <img src={vidicon} alt="Vidyasri Logo" className="h-40 w-auto cursor-pointer" />
-        </Link>
+        </a>
       </div>
 
       <div className="container mx-auto px-4 flex items-center text-transform: capitalize justify-end gap-16 font-['sans-serif']">
         {/* Desktop Navigation */}
         <nav className="hidden gap-4 lg:flex items-center space-x-8 text-[#073D5E]">
-          <Link
-            to="/"
+          <a
+            href="/"
             className="hover:text-[#1875BA] font-medium transition-colors"
           >
             Home
-          </Link>
+          </a>
           <CourseDropdown />
           <Link
             to="#product"
@@ -79,7 +79,7 @@ export default function Header() {
             to="#contact"
             className="hover:text-[#1875BA] font-medium transition-colors"
           >
-            Business
+            Investor Relation
           </Link>
         </nav>
 
@@ -105,13 +105,13 @@ export default function Header() {
       {isOpen && (
         <div className="lg:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4 flex flex-col text-transform: capitalize space-y-4 font-['Avenir','Inter','sans-serif']">
-            <Link
-              to="/"
+            <a
+              href="/"
               className="text-[#073D5E] hover:text-[#1875BA] py-2 font-medium"
               onClick={() => setIsOpen(false)}
             >
               Home
-            </Link>
+            </a>
             <div className="border-b pb-1">
               <div className="font-medium text-[#073D5E] mb-2">Courses</div>
               <div className="pl-4 space-y-2">
