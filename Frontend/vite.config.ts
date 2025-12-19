@@ -12,6 +12,6 @@ export default defineConfig({
     },
   },
   server: {
-    allowedHosts: ['ef1cd73eacc0.ngrok-free.app'],
+    allowedHosts: ['unsynthesised-zaniyah-nondiffidently.ngrok-free.dev'],
   },
 })

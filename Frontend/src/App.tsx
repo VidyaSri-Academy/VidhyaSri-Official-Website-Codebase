@@ -18,10 +18,10 @@ function App() {
   }, []);
 
   return (
-    <main>
-      <nav>
+    <main className="font-sans">
+      <div className="sticky top-0 w-full z-40">
         <Header />
-      </nav>
+      </div>
       
       <Outlet />
 

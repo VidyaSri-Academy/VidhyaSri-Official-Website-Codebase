@@ -1,43 +1,60 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BrainCircuit, ChartBar, FileText, Lightbulb, Target, Users } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import "./suctom.css";
 
-const features = [
+const values = [
   {
-    icon: <BrainCircuit className="h-10 w-10 text-blue-600" />,
-    title: "AI-Powered Learning Paths",
-    description: "Customize learning journeys based on individual student progress, preferences, and goals with our advanced AI algorithms."
+    tag: "Core Value",
+    title: "Student First",
+    description: "We constantly push the boundaries of what's possible in educational technology, pioneering new approaches to learning and teaching students first.",
+    link: "Learn more",
+    glow: "from-blue-400 to-purple-400"
   },
   {
-    icon: <ChartBar className="h-10 w-10 text-indigo-600" />,
-    title: "Data-Driven Insights",
-    description: "Gain actionable insights from comprehensive analytics dashboards that visualize student performance and learning trends."
+    tag: "Commitment",
+    title: "Hard Work",
+    description: "Every feature we build and decision we make prioritizes improving outcomes for learners of all ages, backgrounds, and abilities.",
+    link: "Learn more",
+    glow: "from-blue-400 to-purple-400"
   },
   {
-    icon: <Users className="h-10 w-10 text-blue-600" />,
-    title: "Collaborative Learning",
-    description: "Enable seamless collaboration between students, teachers, and parents with integrated communication and feedback tools."
+    tag: "Principle",
+    title: "Accountability",
+    description: "We harness the power of data analytics to provide actionable insights while maintaining the highest standards of privacy and security with their results.",
+    link: "Learn more",
+    glow: "from-blue-400 to-purple-400"
   },
   {
-    icon: <Target className="h-10 w-10 text-indigo-600" />,
-    title: "Personalized Assessments",
-    description: "Create adaptive assessments that adjust difficulty based on student responses, providing a more accurate measure of knowledge."
+    tag: "Philosophy",
+    title: "Inclusive by Design",
+    description: "We create solutions that are accessible to all, ensuring equitable access to quality education regardless of circumstances.",
+    link: "Learn more",
+    glow: "from-blue-400 to-purple-400"
   },
   {
-    icon: <Lightbulb className="h-10 w-10 text-blue-600" />,
-    title: "Interactive Content",
-    description: "Engage students with multimedia-rich interactive content that makes learning more immersive and effective."
+    tag: "Approach",
+    title: "Research-Backed",
+    description: "Our approaches are grounded in educational research and cognitive science, with continuous assessment of efficacy.",
+    link: "Learn more",
+    glow: "from-blue-400 to-purple-400"
   },
   {
-    icon: <FileText className="h-10 w-10 text-indigo-600" />,
-    title: "Curriculum Management",
-    description: "Easily develop, organize, and update curriculum materials with our intuitive content management system."
+    tag: "Culture",
+    title: "Collaborative Spirit",
+    description: "We believe in the power of partnership with educators, institutions, and communities to create lasting positive change.",
+    link: "Learn more",
+    glow: "from-blue-400 to-purple-400"
   }
 ];
 
-export default function Features() {
+const getRotation = (index: number) => {
+  const rotations = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "-rotate-3", "rotate-3"];
+  return rotations[index % rotations.length];
+};
+
+export default function Values() {
   return (
-    <section id="features" className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -47,33 +64,73 @@ export default function Features() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Powerful <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Features</span> That Transform Education
+              OurValues
             </h2>
             <p className="text-lg text-gray-600">
-              Our comprehensive platform is designed to address the unique challenges of modern education,
-              providing tools that empower educators and enhance student outcomes.
+              These core principles guide everything we do as we work to transform education 
+              through innovative technology solutions and make a positive impact on learners worldwide.
             </p>
           </motion.div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
+          {values.map((value, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                ease: "easeOut"
+              }}
               viewport={{ once: true }}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
+              className={`relative rounded-3xl p-[2px] group cursor-pointer ${getRotation(index)}`}
+              style={{zIndex: 10 - index}}
             >
-              <Card className="border-0 shadow-md hover:shadow-xl transition-shadow h-full">
-                <CardHeader className="pb-2">
-                  <div className="mb-3">{feature.icon}</div>
-                  <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 text-base">{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
+              {/* Glow border */}
+              <div
+                className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${value.glow} opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`}
+              ></div>
+
+              {/* Card content */}
+              <motion.div 
+                className="relative bg-white rounded-3xl p-8 h-full shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-300"
+                whileHover={{ y: -5 }}
+              >
+                <motion.span 
+                  className="inline-block text-xs bg-gradient-to-r from-blue-100 to-indigo-100 px-3 py-1.5 rounded-full shadow-sm text-blue-700 font-medium"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {value.tag}
+                </motion.span>
+
+                <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+
+                <motion.button 
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-indigo-600 transition-colors group/btn cursor-pointer"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {value.link} 
+                  <motion.span
+                    className="text-lg"
+                    animate={{ x: [0, 3, 0] }}
+                    transition={{ 
+                      duration: 1.5, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    →
+                  </motion.span>
+                </motion.button>
+              </motion.div>
             </motion.div>
           ))}
         </div>

@@ -1,117 +1,192 @@
-
-// Import motion from Framer Motion
-import { motion } from "framer-motion";
-// Import the icons we'll use from lucide-react
-import {
-  FlaskConical,
-  Briefcase,
-  Landmark,
-  ShieldCheck,
-  GraduationCap,
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  ArrowRight, FlaskConical, Briefcase, 
+  Landmark, ShieldCheck, ChevronDown, 
+  Sparkles, GraduationCap, Search, Plus
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-import "./suctom.css"; // Your custom CSS file
-
-// Data array remains the same
-const programs = [
+// Configuration for all cards
+const examCategories = [
   {
+    title: "School Prep",
     eligibility: "Class 6th to 10th",
-    exams: ["Foundation Program", "NTSE", "KVPY", "Olympiads"],
+    exams: ["Foundation", "NTSE", "KVPY", "Olympiads"],
     aop: "MapMyTutor",
-    icon: <FlaskConical size={32} className="text-blue-500" />,
+    icon: <FlaskConical className="w-8 h-8 text-blue-500" />,
     link: "https://mapmytutor.com/",
+    bg: "from-blue-50 to-indigo-50",
+    accent: "bg-blue-500",
+    isPrimary: true
   },
   {
-    eligibility: "11th PUI, 12th PUII (Science)",
+    title: "Science Entrance",
+    eligibility: "11th & 12th Science",
     exams: ["IIT-JEE", "NEET", "CET"],
     aop: "MapMyTutor",
-    icon: <FlaskConical size={32} className="text-blue-500" />,
+    icon: <GraduationCap className="w-8 h-8 text-cyan-500" />,
     link: "https://mapmytutor.com/",
+    bg: "from-cyan-50 to-blue-50",
+    accent: "bg-cyan-500",
+    isPrimary: true
   },
   {
-    eligibility: "11th PUI, 12th PUII (Commerce)",
+    title: "Commerce Hub",
+    eligibility: "11th & 12th Commerce",
     exams: ["CA", "CS", "CMA", "ACCA"],
     aop: "SuccessEdge",
-    icon: <Briefcase size={32} className="text-green-500" />,
+    icon: <Briefcase className="w-8 h-8 text-emerald-500" />,
     link: "https://www.successedge.co/",
+    bg: "from-emerald-50 to-teal-50",
+    accent: "bg-emerald-500",
+    isPrimary: true
   },
   {
-    eligibility: "11th PUI, 12th PUII (Science/Commerce/Arts)",
-    exams: ["SSC", "Banking Services", "RRB"],
-    aop: "National Excellencez Academy",
-    icon: <Landmark size={32} className="text-purple-500" />,
+    title: "Govt Job Exams",
+    eligibility: "Science/Commerce/Arts",
+    exams: ["SSC", "Banking", "RRB"],
+    aop: "NEZA",
+    icon: <Landmark className="w-8 h-8 text-purple-500" />,
     link: "https://neza.in/",
+    bg: "from-purple-50 to-fuchsia-50",
+    accent: "bg-purple-500",
+    isPrimary: false
   },
   {
-    eligibility: "11th PUI, 12th PUII (Science/Commerce/Arts)",
-    exams: ["UPSC/PCS Foundation Program"],
+    title: "Civil Services",
+    eligibility: "IAS/PCS Aspirants",
+    exams: ["UPSC", "KPSC", "Foundation"],
     aop: "IndiaA4IAS",
-    icon: <ShieldCheck size={32} className="text-red-500" />,
+    icon: <ShieldCheck className="w-8 h-8 text-red-500" />,
     link: "https://india4ias.com/",
-  },
+    bg: "from-red-50 to-orange-50",
+    accent: "bg-red-500",
+    isPrimary: false
+  }
 ];
 
-export default function IntegratedProgramCards() {
+export default function ExamCategories() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleItems = examCategories.filter(item => item.isPrimary || showAll);
+
   return (
-    // Replaced 'bg-slate-50' with our new 'animated-gradient' class
-    <div className="group animated-gradient-bg rounded-xl shadow-md hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 ease-in-out flex flex-col"
-    style={{ backgroundImage: "repeating-linear-gradient(135deg, #e0e7ff 0px, #e0e7ff 2px, transparent 2px, transparent 24px)" }}>
-      <div className="mt-6 md:mt-10 mx-auto lg:max-w-6xl xl:px-0 px-4 w-full flex flex-col items-center justify-center">
-        <h2 className="md:text-3xl text-2xl font-bold my-2 text-center text-slate-800">
-          School / Junior College Integrated Programs
-        </h2>
-        <p className="md:text-lg text-base text-slate-600 md:leading-relaxed text-center leading-relaxed max-w-2xl">
-          Vidhyasri offers a range of courses for students. Explore our foundation programs to find the perfect one for you.
-        </p>
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-[#073D5E]/5 blur-[120px] rounded-full -z-10" />
+      
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[#073D5E] text-xs font-black uppercase tracking-widest mb-6"
+          >
+            <Sparkles className="w-3 h-3 text-[#E21E26]" />
+            Your Future, Our Map
+          </motion.div>
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+            Exam <span className="text-[#073D5E]">Categories</span>
+          </h2>
+          <p className="text-lg text-slate-500 font-medium">
+            VidyaSri is preparing students for 20+ exam categories. Select your goal below to begin.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 items-stretch justify-center grid-cols-1 gap-8 md:my-12 my-8 w-full">
-          {programs.map((program, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col"
+        {/* The Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence mode="popLayout">
+            {visibleItems.map((category, idx) => (
+              <ExamCard key={category.title} category={category} index={idx} />
+            ))}
+            
+            {/* "View All" Toggle Button as a Card */}
+            {!showAll && (
+              <motion.button
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                whileHover={{ scale: 0.98, backgroundColor: "#f8fafc" }}
+                onClick={() => setShowAll(true)}
+                className="flex flex-col items-center justify-center p-12 rounded-[2.5rem] border-2 border-dashed border-slate-200 bg-white group cursor-pointer h-full min-h-[350px]"
+              >
+                <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mb-6 group-hover:bg-[#073D5E] group-hover:text-white transition-all group-hover:rotate-90">
+                  <Plus className="w-8 h-8" />
+                </div>
+                <p className="text-xl font-black text-slate-400 group-hover:text-[#073D5E] transition-colors">View All Categories</p>
+                <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest mt-2">Explore 15+ More Programs</p>
+              </motion.button>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Collapse Button */}
+        {showAll && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-16 flex justify-center">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowAll(false)}
+              className="rounded-full px-12 h-14 font-black border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-[#073D5E]"
             >
-              <div className="p-6 flex-grow">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-4 pr-4">
-                    {program.exams.join(" / ")}
-                  </h3>
-                  <div className="bg-slate-100 rounded-lg p-3 group-hover:animate-bounce transition-all">
-                    {program.icon || <GraduationCap size={32} className="text-slate-500" />}
-                  </div>
-                </div>
-                
-                <p className="text-sm font-medium text-slate-500 -mt-2 mb-4">
-                  AOP: <span className="font-semibold text-blue-600">{program.aop}</span>
-                </p>
+              Show Less <ChevronDown className="ml-2 w-4 h-4 rotate-180" />
+            </Button>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  );
+}
 
-                <div className="text-xs font-medium mr-2 mb-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700 shadow">
-                  {program.eligibility.split(", ").map((eligibilityTag) => (
-                    <span
-                      key={eligibilityTag}
-                      className="text-xs font-medium mr-2 mb-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700"
-                    >
-                      {eligibilityTag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="border-t border-slate-200 my-2"></div>
-              {/* Updated Button Section */}
-              <div className="inline-block text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 rounded-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <motion.a
-                  href={program.link}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="inline-block text-sm font-semibold text-white bg-blue-600 px-5 py-2.5 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                >
-                  Learn More &rarr;
-                </motion.a>
-              </div>
-            </div>
+function ExamCard({ category, index }: { category: any; index: number }) {
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      whileHover={{ y: -10 }}
+      className={`relative h-full flex flex-col justify-between p-10 rounded-[2.5rem] bg-gradient-to-br ${category.bg} border border-white shadow-[0_20px_50px_rgba(0,0,0,0.03)] group overflow-hidden`}
+    >
+      {/* Visual Accent Decoration */}
+      <div className={`absolute -right-8 -top-8 w-36 h-36 ${category.accent} opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-opacity`} />
+      
+      <div>
+        <div className="flex justify-between items-start mb-8">
+          <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center group-hover:shadow-lg transition-all">
+            {category.icon}
+          </div>
+          <span className="px-3 py-1 rounded-full bg-white/50 border border-white text-[10px] font-black text-[#073D5E] uppercase tracking-widest">
+            {category.aop}
+          </span>
+        </div>
+
+        <h3 className="text-3xl font-black text-slate-800 mb-2 leading-tight">
+          {category.title}
+        </h3>
+        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-6">
+          {category.eligibility}
+        </p>
+        
+        <div className="flex flex-wrap gap-2">
+          {category.exams.map((exam: string) => (
+            <span key={exam} className="px-3 py-1.5 rounded-xl bg-white text-[11px] font-black text-slate-600 border border-white shadow-sm">
+              {exam}
+            </span>
           ))}
         </div>
       </div>
-    </div>
+
+      <div className="mt-12 pt-8 border-t border-slate-200/50 flex items-center justify-between">
+        <a 
+          href={category.link} 
+          className="text-sm font-black text-[#073D5E] flex items-center gap-2 group/btn"
+        >
+          Explore Category 
+          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </motion.div>
   );
 }

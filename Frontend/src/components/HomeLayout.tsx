@@ -1,3 +1,4 @@
+import AchievementBanner from "./AchievementBanner";
 import ContactSection from "./Contactus";
 import IntegratedProgramCards from "./Coursecategories";
 import IntegratedProgramCards2 from "./Coursescategories2";
@@ -12,14 +13,14 @@ import Testimonials from "./Testimonials";
 const HomeLayout = () => {
   return (
     <>
+      <AchievementBanner />
       <Landing />
       <MovingSchoolAds />
       <ProductSection />
       <Features />
       <Testimonials />
-      <InvestorSection />
       <IntegratedProgramCards />
-      <IntegratedProgramCards2 />
+      {/* <IntegratedProgramCards2 /> */}
       <ContactSection />
     </>
   );
