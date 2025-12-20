@@ -3,133 +3,80 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight, FlaskConical, Briefcase, 
   Landmark, ShieldCheck, ChevronDown, 
-  Sparkles, GraduationCap, Search, Plus
+  Sparkles, Plus, GraduationCap, Atom, Microscope
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Configuration for all cards
-const examCategories = [
-  {
-    title: "School Prep",
-    eligibility: "Class 6th to 10th",
-    exams: ["Foundation", "NTSE", "KVPY", "Olympiads"],
-    aop: "MapMyTutor",
-    icon: <FlaskConical className="w-8 h-8 text-blue-500" />,
-    link: "https://mapmytutor.com/",
-    bg: "from-blue-50 to-indigo-50",
-    accent: "bg-blue-500",
-    isPrimary: true
-  },
-  {
-    title: "Science Entrance",
-    eligibility: "11th & 12th Science",
-    exams: ["IIT-JEE", "NEET", "CET"],
-    aop: "MapMyTutor",
-    icon: <GraduationCap className="w-8 h-8 text-cyan-500" />,
-    link: "https://mapmytutor.com/",
-    bg: "from-cyan-50 to-blue-50",
-    accent: "bg-cyan-500",
-    isPrimary: true
-  },
-  {
-    title: "Commerce Hub",
-    eligibility: "11th & 12th Commerce",
-    exams: ["CA", "CS", "CMA", "ACCA"],
-    aop: "SuccessEdge",
-    icon: <Briefcase className="w-8 h-8 text-emerald-500" />,
-    link: "https://www.successedge.co/",
-    bg: "from-emerald-50 to-teal-50",
-    accent: "bg-emerald-500",
-    isPrimary: true
-  },
-  {
-    title: "Govt Job Exams",
-    eligibility: "Science/Commerce/Arts",
-    exams: ["SSC", "Banking", "RRB"],
-    aop: "NEZA",
-    icon: <Landmark className="w-8 h-8 text-purple-500" />,
-    link: "https://neza.in/",
-    bg: "from-purple-50 to-fuchsia-50",
-    accent: "bg-purple-500",
-    isPrimary: false
-  },
-  {
-    title: "Civil Services",
-    eligibility: "IAS/PCS Aspirants",
-    exams: ["UPSC", "KPSC", "Foundation"],
-    aop: "IndiaA4IAS",
-    icon: <ShieldCheck className="w-8 h-8 text-red-500" />,
-    link: "https://india4ias.com/",
-    bg: "from-red-50 to-orange-50",
-    accent: "bg-red-500",
-    isPrimary: false
-  }
+// 1. Flattened Data Structure: Every Exam is a primary object
+const individualExams = [
+  // School / Foundation (MapMyTutor)
+  { id: "ntse", name: "NTSE", eligibility: "Class 10th", aop: "MapMyTutor", icon: <Atom className="text-blue-500" />, link: "https://mapmytutor.com/", bg: "from-blue-50 to-indigo-50", accent: "bg-blue-500", isPrimary: true },
+  { id: "kvpy", name: "KVPY", eligibility: "Class 11th & 12th", aop: "MapMyTutor", icon: <FlaskConical className="text-indigo-500" />, link: "https://mapmytutor.com/", bg: "from-indigo-50 to-purple-50", accent: "bg-indigo-500", isPrimary: true },
+  { id: "olympiad", name: "Olympiads", eligibility: "Class 6th to 12th", aop: "MapMyTutor", icon: <Sparkles className="text-amber-500" />, link: "https://mapmytutor.com/", bg: "from-amber-50 to-orange-50", accent: "bg-amber-500", isPrimary: true },
+  
+  // Science Entrance (MapMyTutor)
+  { id: "neet", name: "NEET", eligibility: "12th Pass/Appearing", aop: "MapMyTutor", icon: <Microscope className="text-red-500" />, link: "https://mapmytutor.com/", bg: "from-red-50 to-rose-50", accent: "bg-red-500", isPrimary: true },
+  { id: "jee", name: "IIT-JEE", eligibility: "12th Pass/Appearing", aop: "MapMyTutor", icon: <GraduationCap className="text-cyan-500" />, link: "https://mapmytutor.com/", bg: "from-cyan-50 to-blue-50", accent: "bg-cyan-500", isPrimary: true },
+  
+  // Commerce (SuccessEdge)
+  { id: "ca", name: "Chartered Accountant (CA)", eligibility: "Commerce Graduate/12th", aop: "SuccessEdge", icon: <Briefcase className="text-emerald-500" />, link: "https://www.successedge.co/", bg: "from-emerald-50 to-teal-50", accent: "bg-emerald-500", isPrimary: true },
+  { id: "acca", name: "ACCA", eligibility: "Any Graduate", aop: "SuccessEdge", icon: <Briefcase className="text-teal-600" />, link: "https://www.successedge.co/", bg: "from-teal-50 to-slate-50", accent: "bg-teal-600", isPrimary: false },
+  
+  // Govt / UPSC (NEZA & India4IAS)
+  { id: "upsc", name: "UPSC (IAS/IPS)", eligibility: "Any Graduate", aop: "India4IAS", icon: <ShieldCheck className="text-orange-600" />, link: "https://india4ias.com/", bg: "from-orange-50 to-yellow-50", accent: "bg-orange-600", isPrimary: false },
+  { id: "ssc", name: "SSC CGL", eligibility: "Any Graduate", aop: "NEZA", icon: <Landmark className="text-purple-500" />, link: "https://neza.in/", bg: "from-purple-50 to-fuchsia-50", accent: "bg-purple-500", isPrimary: false },
+  { id: "banking", name: "Banking Services", eligibility: "Any Graduate", aop: "NEZA", icon: <Landmark className="text-blue-600" />, link: "https://neza.in/", bg: "from-blue-50 to-sky-50", accent: "bg-blue-600", isPrimary: false },
 ];
 
 export default function ExamCategories() {
   const [showAll, setShowAll] = useState(false);
-  const visibleItems = examCategories.filter(item => item.isPrimary || showAll);
+  const visibleExams = individualExams.filter(exam => exam.isPrimary || showAll);
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Background Glows */}
       <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-[#073D5E]/5 blur-[120px] rounded-full -z-10" />
       
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[#073D5E] text-xs font-black uppercase tracking-widest mb-6"
-          >
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[#073D5E] text-xs font-black uppercase tracking-widest mb-6">
             <Sparkles className="w-3 h-3 text-[#E21E26]" />
-            Your Future, Our Map
+            Individual Excellence Paths
           </motion.div>
-          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-            Exam <span className="text-[#073D5E]">Categories</span>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+            Explore All <span className="text-[#073D5E]">Exams</span>
           </h2>
           <p className="text-lg text-slate-500 font-medium">
-            VidyaSri is preparing students for 20+ exam categories. Select your goal below to begin.
+            Dedicated preparation modules for every major competitive milestone.
           </p>
         </div>
 
-        {/* The Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
-            {visibleItems.map((category, idx) => (
-              <ExamCard key={category.title} category={category} index={idx} />
+            {visibleExams.map((exam, idx) => (
+              <ExamHeroCard key={exam.id} exam={exam} index={idx} />
             ))}
             
-            {/* "View All" Toggle Button as a Card */}
             {!showAll && (
               <motion.button
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                layout initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 whileHover={{ scale: 0.98, backgroundColor: "#f8fafc" }}
                 onClick={() => setShowAll(true)}
-                className="flex flex-col items-center justify-center p-12 rounded-[2.5rem] border-2 border-dashed border-slate-200 bg-white group cursor-pointer h-full min-h-[350px]"
+                className="flex flex-col items-center justify-center p-8 rounded-[2rem] border-2 border-dashed border-slate-200 bg-white group cursor-pointer h-full min-h-[300px]"
               >
-                <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mb-6 group-hover:bg-[#073D5E] group-hover:text-white transition-all group-hover:rotate-90">
-                  <Plus className="w-8 h-8" />
+                <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center mb-4 group-hover:bg-[#073D5E] group-hover:text-white transition-all">
+                  <Plus className="w-6 h-6" />
                 </div>
-                <p className="text-xl font-black text-slate-400 group-hover:text-[#073D5E] transition-colors">View All Categories</p>
-                <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest mt-2">Explore 15+ More Programs</p>
+                <p className="text-lg font-black text-slate-400 group-hover:text-[#073D5E]">Discover More Exams</p>
+                <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest mt-1">SSC, Banking, UPSC & More</p>
               </motion.button>
             )}
           </AnimatePresence>
         </div>
 
-        {/* Collapse Button */}
         {showAll && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-16 flex justify-center">
-            <Button 
-              variant="outline" 
-              onClick={() => setShowAll(false)}
-              className="rounded-full px-12 h-14 font-black border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-[#073D5E]"
-            >
-              Show Less <ChevronDown className="ml-2 w-4 h-4 rotate-180" />
+            <Button variant="outline" onClick={() => setShowAll(false)} className="rounded-full px-12 h-14 font-black border-slate-200 text-slate-500 hover:bg-slate-50">
+              Collapse List <ChevronDown className="ml-2 w-4 h-4 rotate-180" />
             </Button>
           </motion.div>
         )}
@@ -138,53 +85,53 @@ export default function ExamCategories() {
   );
 }
 
-function ExamCard({ category, index }: { category: any; index: number }) {
+// 2. Specialized Card for Individual Exams
+function ExamHeroCard({ exam, index }: { exam: any; index: number }) {
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      whileHover={{ y: -10 }}
-      className={`relative h-full flex flex-col justify-between p-10 rounded-[2.5rem] bg-gradient-to-br ${category.bg} border border-white shadow-[0_20px_50px_rgba(0,0,0,0.03)] group overflow-hidden`}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.4, delay: index * 0.03 }}
+      whileHover={{ y: -8, shadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)" }}
+      className={`relative h-full flex flex-col justify-between p-8 rounded-[2rem] bg-gradient-to-br ${exam.bg} border border-white shadow-sm group overflow-hidden`}
     >
-      {/* Visual Accent Decoration */}
-      <div className={`absolute -right-8 -top-8 w-36 h-36 ${category.accent} opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-opacity`} />
+      <div className={`absolute -right-6 -top-6 w-24 h-24 ${exam.accent} opacity-5 rounded-full blur-xl group-hover:opacity-10 transition-opacity`} />
       
       <div>
-        <div className="flex justify-between items-start mb-8">
-          <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center group-hover:shadow-lg transition-all">
-            {category.icon}
+        <div className="flex justify-between items-start mb-6">
+          <div className="w-14 h-14 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+            {React.cloneElement(exam.icon as React.ReactElement, { size: 28 })}
           </div>
-          <span className="px-3 py-1 rounded-full bg-white/50 border border-white text-[10px] font-black text-[#073D5E] uppercase tracking-widest">
-            {category.aop}
-          </span>
+          <div className="flex flex-col items-end">
+            <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Academy Partner</span>
+            <span className="px-3 py-1 rounded-full bg-white/80 border border-white text-[10px] font-black text-[#073D5E]">
+              {exam.aop}
+            </span>
+          </div>
         </div>
 
-        <h3 className="text-3xl font-black text-slate-800 mb-2 leading-tight">
-          {category.title}
+        <h3 className="text-2xl font-black text-slate-800 mb-1 leading-tight">
+          {exam.name}
         </h3>
-        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-6">
-          {category.eligibility}
-        </p>
-        
-        <div className="flex flex-wrap gap-2">
-          {category.exams.map((exam: string) => (
-            <span key={exam} className="px-3 py-1.5 rounded-xl bg-white text-[11px] font-black text-slate-600 border border-white shadow-sm">
-              {exam}
-            </span>
-          ))}
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/40 border border-white/60 text-[11px] font-bold text-slate-600">
+           <GraduationCap size={14} className="opacity-50" />
+           {exam.eligibility}
         </div>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-slate-200/50 flex items-center justify-between">
+      <div className="mt-8 pt-6 border-t border-slate-200/50">
         <a 
-          href={category.link} 
-          className="text-sm font-black text-[#073D5E] flex items-center gap-2 group/btn"
+          href={exam.link} 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-black text-[#073D5E] flex items-center justify-between group/btn"
         >
-          Explore Category 
-          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+          <span>Start Preparation</span>
+          <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center group-hover/btn:bg-[#073D5E] group-hover/btn:text-white transition-all shadow-sm">
+            <ArrowRight size={16} className="group-hover/btn:translate-x-0.5 transition-transform" />
+          </div>
         </a>
       </div>
     </motion.div>

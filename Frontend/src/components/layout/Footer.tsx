@@ -1,90 +1,178 @@
 import { Link } from "react-router-dom";
-import vidicon from "../../assets/vidicon.svg";
+import { motion } from "framer-motion";
+import { 
+  Facebook, 
+  Twitter, 
+  Instagram, 
+  Linkedin, 
+  Mail, 
+  Phone, 
+  ArrowRight,
+  Globe,
+  ShieldCheck,
+  Zap
+} from "lucide-react";
+import vidicon from "./image.png"; // Using imported variable to avoid 404
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    products: [
+      { name: "Smart Learning Platform", href: "#" },
+      { name: "Adaptive Curriculum", href: "#" },
+      { name: "Interactive Content", href: "#" },
+    ],
+    company: [
+      { name: "About VidyaSri", href: "/aboutus" },
+      { name: "Our Expert Team", href: "/aboutus" },
+      { name: "Careers", href: "#" },
+      { name: "Investor Relations", href: "#" },
+    ],
+    resources: [
+      { name: "Learning Blog", href: "#" },
+      { name: "Success Stories", href: "#" },
+      { name: "Documentation", href: "#" },
+      { name: "Help Center", href: "#" },
+      { name: "Contact Support", href: "#" },
+    ]
+  };
+
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 lg:col-span-2">
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-
-          <div className="lg:col-span-2">
-
-              
-           <Link to="/">
-              <img
-                src={vidicon}
-                alt="Vidyasri Logo"
-                className="w-90 mb-4" // Set a specific width and margin
-              />
+    <footer className="bg-white border-t border-slate-100 font-sans">
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        
+        {/* 1. Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-4 space-y-8">
+            <Link to="/" className="flex items-center gap-3 group shrink-0">
+              <div className="relative">
+                <img src={vidicon} alt="Logo" className="h-12 w-auto transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute -inset-1 bg-[#1A5D7A]/5 rounded-full blur-md" />
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-2xl font-black tracking-tight text-[#1A5D7A] leading-none text-left">VIDHYASRI</span>
+                <span className="text-[9px] font-bold text-[#C41E3A] tracking-[0.05em] uppercase leading-tight">The Foundation for Excellence</span>
+              </div>
             </Link>
-            
 
-
-            <p className="text-gray-600 mb-6 max-w-md">
-              Transforming education through innovative technology solutions. 
-              Our mission is to make quality education accessible, engaging, and effective for all learners.
+            <p className="text-slate-500 text-base leading-relaxed max-w-sm">
+              Transforming global education through MapSystem technology. 
+              Making excellence the standard for every learner, everywhere.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
+
+            <div className="flex items-center gap-3">
+              <SocialIcon icon={<Facebook size={18} />} />
+              <SocialIcon icon={<Twitter size={18} />} />
+              <SocialIcon icon={<Instagram size={18} />} />
+              <SocialIcon icon={<Linkedin size={18} />} />
             </div>
           </div>
-          
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Products</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Smart Learning Platform</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">AI-Powered Analytics</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Adaptive Curriculum</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Interactive Content</a></li>
-              {/* <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Virtual Classrooms</a></li> */}
+
+          {/* Navigation Columns */}
+          <div className="lg:col-span-2 flex flex-col">
+            <FooterHeading>Products</FooterHeading>
+            <ul className="space-y-4 flex-1">
+              {footerLinks.products.map(link => (
+                <FooterLink key={link.name} href={link.href}>{link.name}</FooterLink>
+              ))}
             </ul>
           </div>
-          
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><a href="/aboutus" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</a></li>
-              <li><a href="/aboutus" className="text-gray-600 hover:text-blue-600 transition-colors">Our Team</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Press</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Investor Relations</a></li>
+
+          <div className="lg:col-span-2 flex flex-col">
+            <FooterHeading>Company</FooterHeading>
+            <ul className="space-y-4 flex-1">
+              {footerLinks.company.map(link => (
+                <FooterLink key={link.name} href={link.href}>{link.name}</FooterLink>
+              ))}
             </ul>
           </div>
-          
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Case Studies</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Support</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
+
+          <div className="lg:col-span-2 flex flex-col">
+            <FooterHeading>Support</FooterHeading>
+            <ul className="space-y-4 flex-1">
+              {footerLinks.resources.map(link => (
+                <FooterLink key={link.name} href={link.href}>{link.name}</FooterLink>
+              ))}
             </ul>
+          </div>
+
+          {/* Newsletter / Contact Pulse (Novel Element) */}
+          <div className="lg:col-span-2 flex flex-col">
+            <FooterHeading>Contact</FooterHeading>
+            <div className="space-y-4 flex-1">
+              <div className="flex items-center gap-3 text-slate-500 group cursor-pointer hover:text-[#1A5D7A] transition-colors">
+                <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-[#1A5D7A]/5"><Phone size={14}/></div>
+                <span className="text-sm font-bold">+91 8600105949</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-500 group cursor-pointer hover:text-[#1A5D7A] transition-colors">
+                <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-[#1A5D7A]/5"><Mail size={14}/></div>
+                <span className="text-sm font-bold break-all">info@vidhyasri.com</span>
+              </div>
+            </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} VidhyaSri @ MapMyTutor. All rights reserved.
+
+        {/* 2. Trust Strip (Novel Section) */}
+        <div className="mt-20 py-8 border-y border-slate-50 flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+           <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-[#1A5D7A]"/><span className="text-xs font-black uppercase tracking-widest text-slate-400">Secure Payments</span></div>
+           <div className="flex items-center gap-2"><Globe className="w-5 h-5 text-[#1A5D7A]"/><span className="text-xs font-black uppercase tracking-widest text-slate-400">Global Standards</span></div>
+           <div className="flex items-center gap-2"><Zap className="w-5 h-5 text-[#1A5D7A]"/><span className="text-xs font-black uppercase tracking-widest text-slate-400">MapSystem Powered</span></div>
+        </div>
+
+        {/* 3. Bottom Bar */}
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">
+            © {currentYear} VidhyaSri Academy @ MapMyTutor.
           </p>
-          <div className="flex space-x-6">
-            <a href="#" className="text-gray-600 hover:text-blue-600 text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 text-sm">Terms of Service</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 text-sm">Cookie Policy</a>
+          
+          <div className="flex flex-wrap justify-center gap-8">
+            <Link to="#" className="text-slate-400 hover:text-[#C41E3A] text-[10px] font-black uppercase tracking-widest transition-colors">Privacy Policy</Link>
+            <Link to="#" className="text-slate-400 hover:text-[#C41E3A] text-[10px] font-black uppercase tracking-widest transition-colors">Terms of Service</Link>
+            <Link to="#" className="text-slate-400 hover:text-[#C41E3A] text-[10px] font-black uppercase tracking-widest transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+/** * Helper Components for Visual Consistency
+ */
+
+function FooterHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h4 className="text-[#1A5D7A] text-[11px] font-black uppercase tracking-[0.2em] mb-8">
+      {children}
+    </h4>
+  );
+}
+
+function FooterLink({ children, href }: { children: React.ReactNode; href: string }) {
+  return (
+    <li>
+      <motion.a
+        href={href}
+        whileHover={{ x: 4 }}
+        className="text-slate-500 hover:text-[#1A5D7A] text-sm font-bold flex items-center gap-2 transition-colors group"
+      >
+        <div className="w-1 h-1 rounded-full bg-[#C41E3A] opacity-0 group-hover:opacity-100 transition-opacity" />
+        {children}
+      </motion.a>
+    </li>
+  );
+}
+
+function SocialIcon({ icon }: { icon: React.ReactNode }) {
+  return (
+    <motion.a
+      href="#"
+      whileHover={{ y: -4, backgroundColor: "#1A5D7A", color: "#fff" }}
+      className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 transition-all duration-300 shadow-sm"
+    >
+      {icon}
+    </motion.a>
   );
 }

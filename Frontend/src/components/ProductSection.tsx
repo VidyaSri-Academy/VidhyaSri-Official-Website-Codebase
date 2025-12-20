@@ -170,7 +170,7 @@ export default function ProductSection() {
                        <div className="flex items-center gap-3">
                           <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-[#1A5D7A]">JS</div>
                           <div>
-                             <p className="text-sm font-black">John Smith</p>
+                             <p className="text-sm font-black">Arnav</p>
                              <p className="text-[10px] text-slate-400 font-bold uppercase">Needs Attention</p>
                           </div>
                        </div>

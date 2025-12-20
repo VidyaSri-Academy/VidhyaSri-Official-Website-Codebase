@@ -7,6 +7,7 @@ import InvestorSection from "./Investorsec";
 import Landing from "./Landing";
 import MovingSchoolAds from "./MovingAds";
 import ProductSection from "./ProductSection";
+import StatsSection from "./StatsSection";
 import Testimonials from "./Testimonials";
 
 
@@ -16,6 +17,7 @@ const HomeLayout = () => {
       <AchievementBanner />
       <Landing />
       <MovingSchoolAds />
+      <StatsSection />
       <ProductSection />
       <Features />
       <Testimonials />

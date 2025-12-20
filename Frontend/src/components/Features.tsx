@@ -54,24 +54,26 @@ const getRotation = (index: number) => {
 
 export default function Values() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              OurValues
-            </h2>
-            <p className="text-lg text-gray-600">
-              These core principles guide everything we do as we work to transform education 
-              through innovative technology solutions and make a positive impact on learners worldwide.
-            </p>
-          </motion.div>
-        </div>
+    <section className="py-20 bg-gray-50/50">
+          <div className="container mx-auto px-6">
+            {/* Header Section */}
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-blue-600 font-semibold tracking-wide uppercase text-sm">Our DNA</span>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-6">
+                  Our Values
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  These core principles guide everything we do as we work to transform education 
+                  through innovative technology solutions.
+                </p>
+              </motion.div>
+            </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
           {values.map((value, index) => (

@@ -51,9 +51,9 @@ export default function Header() {
             <img src={vidicon} alt="Logo" className="h-9 sm:h-12 w-auto transition-transform duration-500 group-hover:rotate-[360deg]" />
             <div className="absolute -inset-1 bg-[#1A5D7A]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
-          <div className="flex flex-col">
-            <span className="text-lg sm:text-2xl font-extrabold tracking-tight text-[#1A5D7A] leading-none">VIDHYASRI</span>
-            <span className="hidden sm:block text-[9px] font-semibold text-[#E21E26] tracking-[0.2em] uppercase opacity-90">The Foundation for Excellence</span>
+          <div className="flex flex-col gap-0.5 max-w-[140px] sm:max-w-none">
+            <span className="text-xl sm:text-3xl font-black tracking-tight text-[#1A5D7A] leading-none">VIDHYASRI</span>
+            <span className="text-[7px] sm:text-[9px] font-bold text-[#C41E3A] tracking-[0.03em] sm:tracking-[0.05em] uppercase leading-tight">The Foundation for Excellence</span>
           </div>
         </Link>
 
@@ -201,7 +201,16 @@ export default function Header() {
               <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white pointer-events-none" />
               <div className="p-5 sm:p-6 h-full flex flex-col">
                 <div className="flex justify-between items-center mb-6 sm:mb-8 relative z-10 pb-4 border-b border-slate-100">
-                  <span className="font-extrabold text-[#1A5D7A] tracking-tight text-lg sm:text-xl">VIDHYASRI</span>
+                  <div className="flex items-center gap-2">
+                    <div className="relative">
+                      <img src={vidicon} alt="Logo" className="h-8 w-auto" />
+                      <div className="absolute -inset-1 bg-[#1A5D7A]/5 rounded-full blur-md" />
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="font-extrabold text-[#1A5D7A] tracking-tight text-lg">VIDHYASRI</span>
+                      <span className="text-[7px] font-bold text-[#C41E3A] tracking-[0.03em] uppercase leading-tight">The Foundation for Excellence</span>
+                    </div>
+                  </div>
                   <button 
                     onClick={() => setMobileMenuOpen(false)} 
                     className="p-2.5 bg-slate-100 rounded-full hover:rotate-90 transition-transform hover:bg-slate-200 active:scale-95"
