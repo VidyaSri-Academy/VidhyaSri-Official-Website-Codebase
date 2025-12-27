@@ -119,13 +119,13 @@ export default function Footer() {
         <div className="mt-20 py-8 border-y border-slate-50 flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
            <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-[#1A5D7A]"/><span className="text-xs font-black uppercase tracking-widest text-slate-400">Secure Payments</span></div>
            <div className="flex items-center gap-2"><Globe className="w-5 h-5 text-[#1A5D7A]"/><span className="text-xs font-black uppercase tracking-widest text-slate-400">Global Standards</span></div>
-           <div className="flex items-center gap-2"><Zap className="w-5 h-5 text-[#1A5D7A]"/><span className="text-xs font-black uppercase tracking-widest text-slate-400">MapSystem Powered</span></div>
+           <div className="flex items-center gap-2"><Zap className="w-5 h-5 text-[#1A5D7A]"/><span className="text-xs font-black uppercase tracking-widest text-slate-400">MapSystems Powered</span></div>
         </div>
 
         {/* 3. Bottom Bar */}
         <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">
-            © {currentYear} VidhyaSri Academy @ MapMyTutor.
+            © {currentYear} VidhyaSri Academy @ MAPSystems.
           </p>
           
           <div className="flex flex-wrap justify-center gap-8">
@@ -144,7 +144,7 @@ export default function Footer() {
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="text-[#1A5D7A] text-[11px] font-black uppercase tracking-[0.2em] mb-8">
+    <h4 className="pl-3 text-[#1A5D7A] text-[11px] font-black uppercase tracking-[0.2em] mb-8">
       {children}
     </h4>
   );
