@@ -105,7 +105,7 @@ export default function Landing() {
             </h1>
 
             <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
-              VidyaSri is the global standard for academic brilliance, providing the technology and mentorship to shape the leaders of tomorrow.
+              VidhyaSri is the global standard for academic brilliance, providing the technology and mentorship to shape the leaders of tomorrow.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
@@ -205,7 +205,7 @@ export default function Landing() {
               </button>
               <iframe 
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+                src="" 
                 allow="autoplay; encrypted-media" 
                 allowFullScreen
               />

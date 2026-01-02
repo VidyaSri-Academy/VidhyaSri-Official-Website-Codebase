@@ -40,7 +40,7 @@ export default function ContactSection() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[#073D5E] text-xs font-black uppercase tracking-widest mb-6"
           >
             <Sparkles className="w-3 h-3 text-[#E21E26]" />
-            Connect With VidyaSri
+            Connect With VidhyaSri Academy
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-none">
             Let’s Build the <span className="text-[#073D5E]">Foundation</span> of Your Future.

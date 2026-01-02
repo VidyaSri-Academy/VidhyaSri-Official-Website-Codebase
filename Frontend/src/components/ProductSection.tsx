@@ -39,7 +39,7 @@ export default function ProductSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-[#073D5E] text-sm font-bold mb-6">
             <Sparkles className="w-4 h-4 text-[#E21E26]" />
-            <span>The VidyaSri Ecosystem Powered By MapSystems</span>
+            <span>The VidhyaSri Ecosystem Powered By MapSystems</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 text-slate-900 tracking-tight">
             One Platform. <span className="text-[#073D5E]">Limitless</span> Possibilities.

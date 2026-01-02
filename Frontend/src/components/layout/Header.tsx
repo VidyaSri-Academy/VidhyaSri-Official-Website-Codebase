@@ -4,33 +4,52 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   ChevronDown, ChevronRight, BookOpen, GraduationCap, 
   Trophy, Search, Menu, X, Rocket, Atom, Globe, 
-  ArrowRight, Sparkles, Flame, Clock
+  ArrowRight, Sparkles, Flame, Clock, Microscope, Briefcase,
+  Landmark, ShieldCheck, FlaskConical, ExternalLink
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import vidicon from "./image.png"; 
 
 // --- Enhanced Data ---
 const COURSE_DATA = {
-  "Competitive Exams": {
-    badge: <Flame className="w-3 h-3 text-orange-500" />,
-    items: [
-      { name: "IIT JEE", icon: <Atom className="text-blue-500" />, sub: "Main & Advanced" },
-      { name: "NEET", icon: <Rocket className="text-red-500" />, sub: "UG Medical" },
-      { name: "GATE", icon: <Globe className="text-teal-500" />, sub: "Engineering" },
-      { name: "AE/JE", icon: <BookOpen className="text-orange-500" />, sub: "State Exams" },
-    ]
-  },
   "School Preparation": {
     badge: <Sparkles className="w-3 h-3 text-purple-500" />,
     items: [
-      { name: "Foundation", icon: <GraduationCap className="text-purple-500" />, sub: "Class 6th - 10th" },
-      { name: "Class 11-12", icon: <Trophy className="text-yellow-500" />, sub: "Boards + KVPY" },
+      { name: "NTSE", icon: <Atom className="text-blue-500" />, sub: "Class 10th", platform: "MapMyTutor", link: "https://mapmytutor.com/" },
+      { name: "KVPY", icon: <FlaskConical className="text-indigo-500" />, sub: "Class 11th & 12th", platform: "MapMyTutor", link: "https://mapmytutor.com/" },
+      { name: "Olympiads", icon: <Sparkles className="text-amber-500" />, sub: "Class 6th to 12th", platform: "MapMyTutor", link: "https://mapmytutor.com/" },
+    ]
+  },
+  "Science Entrance": {
+    badge: <Flame className="w-3 h-3 text-orange-500" />,
+    items: [
+      { name: "NEET", icon: <Microscope className="text-red-500" />, sub: "12th Pass/Appearing", platform: "MapMyTutor", link: "https://mapmytutor.com/" },
+      { name: "IIT-JEE", icon: <Atom className="text-cyan-500" />, sub: "Main & Advanced", platform: "MapMyTutor", link: "https://mapmytutor.com/" },
+    ]
+  },
+  "Commerce": {
+    badge: <Briefcase className="w-3 h-3 text-emerald-500" />,
+    items: [
+      { name: "CA", icon: <Briefcase className="text-emerald-500" />, sub: "Chartered Accountant", platform: "SuccessEdge", link: "https://www.successedge.co/" },
+      { name: "CS", icon: <Briefcase className="text-teal-500" />, sub: "Company Secretary", platform: "SuccessEdge", link: "https://www.successedge.co/" },
+      { name: "CMA", icon: <Briefcase className="text-blue-500" />, sub: "Cost Management", platform: "SuccessEdge", link: "https://www.successedge.co/" },
+      { name: "ACCA", icon: <Globe className="text-teal-600" />, sub: "Any Graduate", platform: "SuccessEdge", link: "https://www.successedge.co/" },
+    ]
+  },
+  "Government Exams": {
+    badge: <Trophy className="w-3 h-3 text-orange-600" />,
+    items: [
+      { name: "UPSC (IAS/IPS)", icon: <ShieldCheck className="text-orange-600" />, sub: "Any Graduate", platform: "India4IAS", link: "https://india4ias.com/" },
+      { name: "KPSC (KAS)", icon: <ShieldCheck className="text-red-600" />, sub: "Any Graduate", platform: "India4IAS", link: "https://india4ias.com/" },
+      { name: "SSC CGL", icon: <Landmark className="text-purple-500" />, sub: "Any Graduate", platform: "NEZA", link: "https://neza.in/" },
+      { name: "Banking Services", icon: <Landmark className="text-blue-600" />, sub: "Any Graduate", platform: "NEZA", link: "https://neza.in/" },
+      { name: "RRB", icon: <Landmark className="text-green-600" />, sub: "Any Graduate", platform: "NEZA", link: "https://neza.in/" },
     ]
   },
 };
 
 export default function Header() {
-  const [activeTab, setActiveTab] = useState("Competitive Exams");
+  const [activeTab, setActiveTab] = useState("School Preparation");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -110,25 +129,34 @@ export default function Header() {
                   <div className="flex-1 p-8 bg-transparent relative z-10">
                     <div className="flex items-center justify-between mb-6">
                       <h3 className="text-lg font-bold text-slate-900">{activeTab}</h3>
-                      <Link to="/all-courses" className="text-xs font-semibold text-[#1A5D7A] flex items-center gap-1 hover:underline">
-                        View All <ArrowRight className="w-3 h-3" />
-                      </Link>
+                      <div className="text-xs font-semibold text-slate-500 flex items-center gap-1.5">
+                        <span className="px-2 py-1 bg-slate-100 rounded-full">{COURSE_DATA[activeTab as keyof typeof COURSE_DATA].items.length} Courses</span>
+                      </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       {COURSE_DATA[activeTab as keyof typeof COURSE_DATA].items.map((course) => (
-                        <motion.div
+                        <motion.a
                           key={course.name}
+                          href={course.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ y: -2 }}
                           className="flex items-start gap-4 p-4 rounded-2xl border border-slate-100/60 hover:border-[#1A5D7A]/30 hover:bg-white/60 cursor-pointer group/card transition-all backdrop-blur-sm"
                         >
                           <div className="p-3 bg-slate-50/60 rounded-xl group-hover/card:bg-white group-hover/card:shadow-md transition-all">
                             {course.icon}
                           </div>
-                          <div>
-                            <p className="text-sm font-bold text-slate-800">{course.name}</p>
+                          <div className="flex-1">
+                            <div className="flex items-start justify-between gap-2">
+                              <p className="text-sm font-bold text-slate-800">{course.name}</p>
+                              <ExternalLink className="w-3 h-3 text-slate-400 group-hover/card:text-[#1A5D7A] transition-colors flex-shrink-0" />
+                            </div>
                             <p className="text-[11px] font-medium text-slate-600 mt-0.5">{course.sub}</p>
+                            <div className="mt-2">
+                              <span className="text-[9px] font-bold text-[#1A5D7A] bg-[#1A5D7A]/10 px-2 py-0.5 rounded-full">{course.platform}</span>
+                            </div>
                           </div>
-                        </motion.div>
+                        </motion.a>
                       ))}
                     </div>
                   </div>
@@ -235,20 +263,26 @@ export default function Header() {
                         </summary>
                         <div className="mt-2 space-y-2 px-2">
                           {COURSE_DATA[cat as keyof typeof COURSE_DATA].items.map((course) => (
-                            <Link
+                            <a
                               key={course.name}
-                              to={`/course/${course.name.toLowerCase().replace(/ /g, '-')}`}
+                              href={course.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               onClick={() => setMobileMenuOpen(false)}
                               className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all"
                             >
                               <div className="p-2 bg-white rounded-lg shadow-sm">
                                 {course.icon}
                               </div>
-                              <div>
-                                <p className="text-sm font-semibold text-slate-800">{course.name}</p>
+                              <div className="flex-1">
+                                <div className="flex items-center justify-between">
+                                  <p className="text-sm font-semibold text-slate-800">{course.name}</p>
+                                  <ExternalLink className="w-3 h-3 text-slate-400" />
+                                </div>
                                 <p className="text-xs text-slate-600">{course.sub}</p>
+                                <span className="text-[9px] font-bold text-[#1A5D7A] bg-[#1A5D7A]/10 px-2 py-0.5 rounded-full mt-1 inline-block">{course.platform}</span>
                               </div>
-                            </Link>
+                            </a>
                           ))}
                         </div>
                       </details>
