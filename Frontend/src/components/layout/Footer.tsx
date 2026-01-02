@@ -7,7 +7,6 @@ import {
   Linkedin, 
   Mail, 
   Phone, 
-  ArrowRight,
   Globe,
   ShieldCheck,
   Zap

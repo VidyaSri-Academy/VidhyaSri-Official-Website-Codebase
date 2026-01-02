@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  ArrowRight, Play, Users, BookOpen, 
+  ArrowRight, Play, Users, 
   Trophy, Sparkles, CheckCircle2, X,
   Zap, ChevronRight 
 } from "lucide-react";

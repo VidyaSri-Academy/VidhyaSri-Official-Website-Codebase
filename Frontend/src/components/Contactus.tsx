@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { 
-  Building, Mail, MapPin, Phone, 
-  Send, Sparkles, MessageSquare, 
-  ArrowRight, Globe, Zap, GraduationCap,
+  Mail, MapPin, Phone, 
+  Sparkles, MessageSquare, 
+  ArrowRight, Globe, Zap,
   Clock, ShieldCheck
 } from "lucide-react";
 import { Button } from "@/components/ui/button";

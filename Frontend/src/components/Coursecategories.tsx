@@ -59,7 +59,7 @@ export default function ExamCategories() {
             {!showAll && (
               <motion.button
                 layout initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                whileHover={{ scale: 0.98, backgroundColor: "#f8fafc" }}
+                whileHover={{ scale: 0.98 }}
                 onClick={() => setShowAll(true)}
                 className="flex flex-col items-center justify-center p-8 rounded-[2rem] border-2 border-dashed border-slate-200 bg-white group cursor-pointer h-full min-h-[300px]"
               >
@@ -102,7 +102,7 @@ function ExamHeroCard({ exam, index }: { exam: any; index: number }) {
       <div>
         <div className="flex justify-between items-start mb-6">
           <div className="w-14 h-14 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-            {React.cloneElement(exam.icon as React.ReactElement, { size: 28 })}
+            {React.cloneElement(exam.icon as React.ReactElement, { className: "w-7 h-7" })}
           </div>
           <div className="flex flex-col items-end">
             <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Academy Partner</span>

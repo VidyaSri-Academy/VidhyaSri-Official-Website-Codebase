@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  ChevronDown, ChevronRight, BookOpen, GraduationCap, 
-  Trophy, Search, Menu, X, Rocket, Atom, Globe, 
+  ChevronDown, ChevronRight, 
+  Trophy, Search, Menu, X, Atom, Globe, 
   ArrowRight, Sparkles, Flame, Clock, Microscope, Briefcase,
   Landmark, ShieldCheck, FlaskConical, ExternalLink
 } from "lucide-react";
