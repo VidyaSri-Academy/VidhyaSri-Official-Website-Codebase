@@ -104,7 +104,7 @@ export default function Footer() {
             <div className="space-y-4 flex-1">
               <div className="flex items-center gap-3 text-slate-500 group cursor-pointer hover:text-[#1A5D7A] transition-colors">
                 <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-[#1A5D7A]/5"><Phone size={14}/></div>
-                <span className="text-sm font-bold">+91 8600105949</span>
+                <span className="text-sm font-bold">+91 8050953615</span>
               </div>
               <div className="flex items-center gap-3 text-slate-500 group cursor-pointer hover:text-[#1A5D7A] transition-colors">
                 <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-[#1A5D7A]/5"><Mail size={14}/></div>
