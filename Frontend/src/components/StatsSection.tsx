@@ -7,7 +7,7 @@ export default function StatsSection() {
     },
     {
       icon: "📝",
-      title: "10 Million +",
+      title: "100k+",
       subtitle: "Tests, sample papers & notes",
     },
     {

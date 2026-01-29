@@ -34,9 +34,9 @@ export default function Directors() {
         <BiographyPage />
         <BiographyPage2 />
         <BiographyPage3 />
-        <BiographyPage6 />
+        {/* <BiographyPage6 />
         <BiographyPage4 />
-        <BiographyPage5 />
+        <BiographyPage5 /> */}
       </section>
   );
 }

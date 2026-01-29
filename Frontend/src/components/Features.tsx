@@ -7,42 +7,42 @@ const values = [
     title: "Student First",
     description: "We constantly push the boundaries of what's possible in educational technology, pioneering new approaches to learning and teaching students first.",
     link: "Learn more",
-    glow: "from-blue-400 to-purple-400"
+    glow: "from-sky-400 to-blue-500"
   },
   {
     tag: "Commitment",
     title: "Hard Work",
     description: "Every feature we build and decision we make prioritizes improving outcomes for learners of all ages, backgrounds, and abilities.",
     link: "Learn more",
-    glow: "from-blue-400 to-purple-400"
+    glow: "from-sky-400 to-blue-500"
   },
   {
     tag: "Principle",
     title: "Accountability",
     description: "We harness the power of data analytics to provide actionable insights while maintaining the highest standards of privacy and security with their results.",
     link: "Learn more",
-    glow: "from-blue-400 to-purple-400"
+    glow: "from-sky-400 to-blue-500"
   },
   {
     tag: "Philosophy",
     title: "Inclusive by Design",
     description: "We create solutions that are accessible to all, ensuring equitable access to quality education regardless of circumstances.",
     link: "Learn more",
-    glow: "from-blue-400 to-purple-400"
+    glow: "from-sky-400 to-blue-500"
   },
   {
     tag: "Approach",
     title: "Research-Backed",
     description: "Our approaches are grounded in educational research and cognitive science, with continuous assessment of efficacy.",
     link: "Learn more",
-    glow: "from-blue-400 to-purple-400"
+    glow: "from-sky-400 to-blue-500"
   },
   {
     tag: "Culture",
     title: "Collaborative Spirit",
     description: "We believe in the power of partnership with educators, institutions, and communities to create lasting positive change.",
     link: "Learn more",
-    glow: "from-blue-400 to-purple-400"
+    glow: "from-sky-400 to-blue-500"
   }
 ];
 
@@ -63,7 +63,7 @@ export default function Values() {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <span className="text-blue-600 font-semibold tracking-wide uppercase text-sm">Our DNA</span>
+                <span className="text-xs font-bold tracking-[0.4em] uppercase text-blue-600 opacity-90">Our DNA</span>
                 <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-6">
                   Our Values
                 </h2>
@@ -90,7 +90,7 @@ export default function Values() {
                 scale: 1.05,
                 transition: { duration: 0.3 }
               }}
-              className={`relative rounded-3xl p-[2px] group cursor-pointer ${getRotation(index)}`}
+              className={`relative rounded-3xl p-[2px] group cursor-pointer`}
               style={{zIndex: 10 - index}}
             >
               {/* Glow border */}

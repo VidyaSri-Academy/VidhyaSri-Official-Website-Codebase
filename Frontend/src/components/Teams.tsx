@@ -39,32 +39,32 @@ const teamMembers = [
     categories: ["Leadership", "Academics"],
   },
   
-  {
-    name: "Dr. M.S Reddy",
-    role: "National Academic Director",
-    avatar: msreeddy,
-    initials: "NAD",
-    bio: "Professor Dr. M.S. Reddy is a distinguished academic leader, researcher, and international expert in zoology and apiculture, serving as the National Academic Director at Vidhyasri.",
-    categories: ["Leadership", "Strategy"],
-  },
+  // {
+  //   name: "Dr. M.S Reddy",
+  //   role: "National Academic Director",
+  //   avatar: msreeddy,
+  //   initials: "NAD",
+  //   bio: "Professor Dr. M.S. Reddy is a distinguished academic leader, researcher, and international expert in zoology and apiculture, serving as the National Academic Director at Vidhyasri.",
+  //   categories: ["Leadership", "Strategy"],
+  // },
 
-  {
-    name: "Ashutosh Kumar",
-    role: "Director Business Development",
-    avatar: Asutosh,
-    initials: "AK",
-    bio: "Ashutosh is a passionate educator with over 10 years of experience, specializing in JEE Mains, NDA, Olympiads, and CBSE board preparation.",
-    categories: ["Academics"],
-  },
+  // {
+  //   name: "Ashutosh Kumar",
+  //   role: "Director Business Development",
+  //   avatar: Asutosh,
+  //   initials: "AK",
+  //   bio: "Ashutosh is a passionate educator with over 10 years of experience, specializing in JEE Mains, NDA, Olympiads, and CBSE board preparation.",
+  //   categories: ["Academics"],
+  // },
 
-  {
-    name: "Anuradha",
-    role: "Regional Director Business Development (MP / MH)",
-    avatar: Anuradha,
-    initials: "NA",
-    bio: "Anuradha is a visionary leader with a passion for transforming education through innovative approaches and technology.",
-    categories: ["Leadership"],
-  },
+  // {
+  //   name: "Anuradha",
+  //   role: "Regional Director Business Development (MP / MH)",
+  //   avatar: Anuradha,
+  //   initials: "NA",
+  //   bio: "Anuradha is a visionary leader with a passion for transforming education through innovative approaches and technology.",
+  //   categories: ["Leadership"],
+  // },
 
 ];
 
