@@ -121,7 +121,7 @@ export default function ContactSection() {
                   <Phone className="w-32 h-32" />
                 </div>
                 <p className="text-[10px] font-bold text-slate-300 uppercase tracking-[0.2em] mb-3">Speak to Us</p>
-                <h4 className="text-3xl font-black mb-1">+91 8600105949</h4>
+                <h4 className="text-3xl font-black mb-1">+91 8050953615</h4>
                 <p className="text-xs text-slate-400 font-bold">Mon - Sat (9:00 AM - 7:00 PM)</p>
               </motion.div>
 
