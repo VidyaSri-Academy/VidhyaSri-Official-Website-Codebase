@@ -4,10 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import Rangappa from "../assets/Rangappa.jpg";
 import PrasadRao from "../assets/Parsadrao.jpg"
-import Asutosh from "../assets/Asutosh.jpg"
 import Sanjay from "../assets/Sanjay.jpg"
-import Anuradha from "../assets/Anuradha.jpg";
-import msreeddy from "../assets/msreeddy.jpg"
 
 const teamMembers = [
   {

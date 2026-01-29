@@ -46,11 +46,6 @@ const values = [
   }
 ];
 
-const getRotation = (index: number) => {
-  const rotations = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "-rotate-3", "rotate-3"];
-  return rotations[index % rotations.length];
-};
-
 export default function Values() {
   return (
     <section className="py-20 bg-gray-50/50">

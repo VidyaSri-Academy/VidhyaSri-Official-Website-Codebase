@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import BiographyPage from "./Biography/Rangapa";
 import BiographyPage2 from "./Biography/PrasadRao";
 import BiographyPage3 from "./Biography/SanjayShukla";
-import BiographyPage4 from "./Biography/Anuradha";
-import BiographyPage5 from "./Biography/Asushtosh";
-import BiographyPage6 from "./Biography/msreddy";
 
 export default function Directors() {
   return (

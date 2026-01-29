@@ -94,15 +94,17 @@ function ExamHeroCard({ exam, index }: { exam: any; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, delay: index * 0.03 }}
-      whileHover={{ y: -8, shadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)" }}
-      className={`relative h-full flex flex-col justify-between p-8 rounded-[2rem] bg-gradient-to-br ${exam.bg} border border-white shadow-sm group overflow-hidden`}
+      whileHover={{ y: -8 }}
+      className={`relative h-full flex flex-col justify-between p-8 rounded-[2rem] bg-gradient-to-br ${exam.bg} border border-white shadow-sm group overflow-hidden hover:shadow-2xl transition-shadow`}
     >
       <div className={`absolute -right-6 -top-6 w-24 h-24 ${exam.accent} opacity-5 rounded-full blur-xl group-hover:opacity-10 transition-opacity`} />
       
       <div>
         <div className="flex justify-between items-start mb-6">
           <div className="w-14 h-14 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-            {React.cloneElement(exam.icon as React.ReactElement, { className: "w-7 h-7" })}
+            <div className="w-7 h-7">
+              {exam.icon}
+            </div>
           </div>
           <div className="flex flex-col items-end">
             <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Academy Partner</span>
